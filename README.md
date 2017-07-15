@@ -7,6 +7,7 @@
 - 工具
     + photoshop
     + sublime-text
+    + [nvm](./tools.md#nvm)
 - 基础知识
     + 浏览器
     + http/https
