@@ -7,7 +7,7 @@
 ## 安装
 
 - 先要卸载原来的nodejs
-- [下载nvm-windows](https://github.com/coreybutler/nvm-windows/releases)后，双击安装即可
+- [下载nvm-windows](https://github.com/coreybutler/nvm-windows/releases)，双击安装即可
 
 ## 配置
 
