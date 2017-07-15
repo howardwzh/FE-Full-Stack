@@ -1,8 +1,8 @@
-## photoshop
+# photoshop
 
-## sublime-text
+# sublime-text
 
-## nvm
+# nvm
 
 ### 安装
 
