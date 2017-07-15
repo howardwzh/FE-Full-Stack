@@ -1,15 +1,15 @@
-# photoshop
+## photoshop
 
-# sublime-text
+## sublime-text
 
-# nvm
+## nvm
 
-## 安装
+### 安装
 
 - 先要卸载原来的nodejs
 - [下载nvm-windows](https://github.com/coreybutler/nvm-windows/releases)，双击安装即可
 
-## 配置
+### 配置
 
 一般来说用nvm下载安装node可能受到国内网络的影响会比较慢，可以采用**淘宝镜像**
 
