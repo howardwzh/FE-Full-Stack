@@ -1,0 +1,16 @@
+{
+  "name": "eslint",
+  "version": "1.0.0",
+  "description": "eslint lab",
+  "main": "index.js",
+  "author": "howardwzh",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint ./index.js"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.9.1",
+    "eslint-plugin-tutorial": "./eslint-plugin-tutorial"
+  }
+}

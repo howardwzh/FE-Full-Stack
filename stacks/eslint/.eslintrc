@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    "tutorial"
+  ],
+  "rules": {
+    "semi": [2],
+    "tutorial/no-local-ip": [2]
+  }
+}
