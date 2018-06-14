@@ -21,7 +21,7 @@
     + [react](https://github.com/howardwzh/star-react)
     + [小程序](https://github.com/howardwzh/weixin)
     + angular
-    + [angular2+](https://github.com/howardwzh/star-angular2+)
+    + [angularX](https://github.com/howardwzh/star-angularX)
     + [数据模拟](./stacks/mock.md)
 - 后端
     + node
