@@ -2,6 +2,7 @@
 前端技术、协议、名词的字典
 
 ## 参考文章
+- [es6-cheatsheet](https://github.com/DrkSephy/es6-cheatsheet)
 - [JavaScript深入系列15篇正式完结](https://juejin.im/post/59278e312f301e006c2e1510)
     + [JavaScirpt深入之从原型到原型链](https://github.com/mqyqingfeng/Blog/issues/2)
     + [JavaScript深入之词法作用域和动态作用域](https://github.com/mqyqingfeng/Blog/issues/3)

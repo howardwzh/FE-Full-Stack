@@ -19,10 +19,11 @@
     + mvc/mvvm
     + [vue](https://github.com/howardwzh/star-vue)
     + [react](https://github.com/howardwzh/star-react)
+    + [react-native](https://github.com/howardwzh/star-react-native)
     + [小程序](https://github.com/howardwzh/weixin)
     + angular
     + [angularX](https://github.com/howardwzh/star-angularX)
-    + [数据模拟](./stacks/mock.md)
+    + [数据模拟](https://github.com/howardwzh/star-mock)
 - 后端
     + node
     + [koa](https://github.com/howardwzh/star-koa)
@@ -37,7 +38,7 @@
     + e2e
 - 数据分析
     + 用户数据
-    + 网站性能
+    + [网站性能](https://github.com/howardwzh/front-end-performance)
 - 项目构建/持续集成
     + [webpack-gulp](https://github.com/howardwzh/star-webpack-gulp)
     + [Travis-CI](https://github.com/ruanyf/jstraining/blob/master/demos/README.md#travis-ci)
