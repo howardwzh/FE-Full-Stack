@@ -404,10 +404,7 @@ or
 git reset --hard xxxxxxxx
 ```
 
-<<<<<<< HEAD:tool/git.md
-### 小贴士
-=======
-###设置代理
+### 设置代理
 
 ```shell
 git config --global http.proxy http://127.0.0.1:1080
@@ -441,8 +438,7 @@ unproxy
 
 ps: global 可换成 local，只设置当前的git仓库采用代理
 
-###小贴士
->>>>>>> 7f64a4752ad55a1047e4270e28c7aa4f4f04bea3:chapters/git.md
+### 小贴士
 
 调出内建图形化界面
 ```
@@ -458,7 +454,7 @@ git config format.pretty oneline
 git config --global format.pretty oneline
 ```
 
-###常见问题
+### 常见问题
 
 ---
 ```shell
@@ -482,4 +478,7 @@ git config –list
 ---
 
 
-
+### 参考
+- [猴子都能懂的GIT](https://backlog.com/git-tutorial/cn/stepup/stepup1_1.html)
+- [高质量的Git中文教程](https://github.com/geeeeeeeeek/git-recipes)
+- [代码合并：Merge、Rebase 的选择](https://github.com/geeeeeeeeek/git-recipes/wiki/5.1-%E4%BB%A3%E7%A0%81%E5%90%88%E5%B9%B6%EF%BC%9AMerge%E3%80%81Rebase-%E7%9A%84%E9%80%89%E6%8B%A9)

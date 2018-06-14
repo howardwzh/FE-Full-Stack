@@ -11,7 +11,7 @@
     + [markdown](./stacks/markdown.md)
 - 基础知识
     + 浏览器
-    + http/https
+    + [http/https](./stacks/http-https.md)
     + html
     + css
     + [javascript](./stacks/javascript.md)
@@ -19,14 +19,16 @@
     + mvc/mvvm
     + [vue](https://github.com/howardwzh/star-vue)
     + [react](https://github.com/howardwzh/star-react)
+    + [小程序](https://github.com/howardwzh/weixin)
     + angular
-    + [angular2/4](https://github.com/howardwzh/star-angular2)
-    + [数据模拟json-server](https://github.com/howardwzh/star-json-server)
+    + [angular2+](https://github.com/howardwzh/star-angular2+)
+    + [数据模拟](./stacks/mock.md)
 - 后端
     + node
     + [koa](https://github.com/howardwzh/star-koa)
     + mongodb
     + mysql
+    + [python](https://github.com/howardwzh/python-lab)
 - 规范与测试
     + [eslint](./stacks/eslint/eslint.md)
     + esdoc
@@ -36,13 +38,14 @@
 - 数据分析
     + 用户数据
     + 网站性能
-- 持续集成
+- 项目构建/持续集成
+    + [webpack-gulp](https://github.com/howardwzh/star-webpack-gulp)
     + [Travis-CI](https://github.com/ruanyf/jstraining/blob/master/demos/README.md#travis-ci)
     + docker
 - 网络安全
     + [常见攻击](./stacks/security.md)
-    + [https](./stacks/https.md)
 - 其它
     + [网址之家](./stacks/web-site-home.md)
     + [面试](./stacks/interview.md)
     + [代码片段收集](./stacks/collection.md)
+    + [环境配置](https://github.com/howardwzh/star-env)
