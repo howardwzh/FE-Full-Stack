@@ -33,6 +33,10 @@ const SingletonPractice = (function () {
         getInstance (args) {
             if (instance === undefined) {
                 instance = new Singleton(args) // 实例化并缓存在私有变量，之后只返回缓存的唯一实例
+            } else { // 已经有实例时，直接改变实例中的参数
+                for (const k in args) {
+                    instance[k] = args[k]
+                }
             }
             return instance
         }
@@ -41,6 +45,7 @@ const SingletonPractice = (function () {
 // 调用示例
 const singletonA = SingletonPractice.getInstance({age: 20})
 console.log(singletonA.age) // 输入：20
-const singletonB = SingletonPractice.getInstance()
-console.log(singletonB.age) // 输入：20
+const singletonB = SingletonPractice.getInstance({age: 50})
+console.log(singletonB.age) // 输入：50
+console.log(singletonA.age) // 输入：50，值一样是因为使用了同一个实例
 ```
