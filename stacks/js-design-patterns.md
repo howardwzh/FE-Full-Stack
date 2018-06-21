@@ -49,3 +49,70 @@ const singletonB = SingletonPractice.getInstance({age: 50})
 console.log(singletonB.age) // 输入：50
 console.log(singletonA.age) // 输入：50，值一样是因为使用了同一个实例
 ```
+
+### 工厂模式
+- 使用场景：一类事物（女生）的不同方法（逛街、化妆、看电影等）
+- 代码：
+```js
+const Girl = {
+    goShopping () {
+        // TODO: 逛街
+    },
+    makeUp () {
+        // TODO: 化妆
+    },
+    seeMovie () {
+        // TODO: 看电影
+    }
+}
+```
+
+### 发布订阅模式
+- 使用场景：需要监听变化（事件）去触发相应方法
+- 代码：
+```js
+const event = {
+    list: {},
+    listen (key, fn) {
+        if(!this.list[key]) {
+            this.list[key] = []
+        }
+        // 订阅的消息添加到缓存列表中
+        this.list[key].push(fn)
+    },
+    trigger () {
+        const key = Array.prototype.shift.call(arguments)
+        const fns = this.list[key]
+        // 如果没有订阅过该消息的话，则返回
+        if(!fns || fns.length === 0) {
+            return;
+        }
+        for(const i = 0,fn; fn = fns[i++];) {
+            fn.apply(this, arguments)
+        }
+    }
+}
+```
+我们再定义一个initEvent函数，这个函数使所有的普通对象都具有发布订阅功能
+```js
+const initEvent = (obj) => {
+    for(const i in event) {
+        obj[i] = event[i]
+    }
+};
+// 我们再来测试下，我们还是给shoeObj这个对象添加发布-订阅功能；
+const shoeObj = {}
+initEvent(shoeObj)
+
+// 小红订阅如下消息
+shoeObj.listen('red',(size) => {
+    console.log("尺码是：" + size)  
+})
+
+// 小花订阅如下消息
+shoeObj.listen('block',(size) => {
+    console.log("再次打印尺码是：" + size)
+});
+shoeObj.trigger('red', 40)
+shoeObj.trigger('block', 42)
+```

@@ -21,3 +21,6 @@
     + [JavaScript深入之类数组对象与arguments](https://github.com/mqyqingfeng/Blog/issues/14)
     + [JavaScript深入之创建对象的多种方式以及优缺点](https://github.com/mqyqingfeng/Blog/issues/15)
     + [JavaScript深入之继承的多种方式以及优缺点](https://github.com/mqyqingfeng/Blog/issues/16)
+
+## 目录
+- [设计模式](./js-design-patterns.md)
