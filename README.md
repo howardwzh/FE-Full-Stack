@@ -27,7 +27,7 @@
 - 后端
     + node
     + [koa](https://github.com/howardwzh/star-koa)
-    + mongodb
+    + [mongodb](./stacks/mongodb.md)
     + mysql
     + [python](https://github.com/howardwzh/python-lab)
 - 规范与测试
@@ -49,4 +49,5 @@
     + [网址之家](./stacks/web-site-home.md)
     + [面试](./stacks/interview.md)
     + [代码片段收集](./stacks/collection.md)
-    + [环境配置](https://github.com/howardwzh/star-env)
+    + [mac环境搭建](./stacks/mac.md)
+    + [科学上网](./stacks/science-online.md)
