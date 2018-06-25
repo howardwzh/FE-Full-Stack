@@ -16,11 +16,14 @@
 - [reset](#reset)
 - [stash](#stash)
 - [revert](#revert)
-- [还原本地改动](#还原本地改动)
-- [忽略](#忽略)
+- [还原本地改动](#%E8%BF%98%E5%8E%9F%E6%9C%AC%E5%9C%B0%E6%94%B9%E5%8A%A8)
+- [忽略](#%E5%BF%BD%E7%95%A5)
 - [tag](#tag)
-- [找回已删除的commit](#找回已删除的commit)
-- [小贴士](#小贴士)
+- [找回已删除的commit](#%E6%89%BE%E5%9B%9E%E5%B7%B2%E5%88%A0%E9%99%A4%E7%9A%84commit)
+- [设置代理](#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86)
+- [小贴士](#%E5%B0%8F%E8%B4%B4%E5%A3%AB)
+- [常见问题](#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
+- [参考](#%E5%8F%82%E8%80%83)
 
 
 #正文
@@ -106,6 +109,11 @@ git log --walk-reflogs --grep-reflog='some message'
 列出某个 提交者 的所有commits
 ```
 git log --author='howard'
+```
+
+列出某个时间区间的提交记录
+```
+git log --after="2014-7-1" --before="2014-7-4"
 ```
 
 ### branch
