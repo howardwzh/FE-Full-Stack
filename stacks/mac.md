@@ -39,3 +39,6 @@
 1. [iTerm-命令行终端](https://www.iterm2.com/)
 2. [Alfred-效率神器](https://www.alfredapp.com/)
 3. Pocket-文章收集(直接chrome插件)
+
+### 常用命令
+1. 终端直接SSH远程连接Linux服务器 = `ssh username@IPaddress`
