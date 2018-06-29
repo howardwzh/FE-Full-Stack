@@ -25,3 +25,4 @@
 
 ## 目录
 - [设计模式](./js-design-patterns.md)
+- [常用函数代码](./js-gists.md)

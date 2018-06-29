@@ -51,3 +51,4 @@
     + [代码片段收集](./stacks/collection.md)
     + [mac环境搭建](./stacks/mac.md)
     + [科学上网](./stacks/science-online.md)
+    + [方法论](./stacks/methodology.md)
