@@ -5,6 +5,7 @@
 - [es6-cheatsheet](https://github.com/DrkSephy/es6-cheatsheet)
 - [史上最全设计模式导学目录（完整版）](https://blog.csdn.net/lovelion/article/details/17517213)
 - [深入理解JavaScript系列-汤姆大叔](http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html)
+- [JavaScript专题系列20篇正式完结！](https://juejin.im/post/59eff1fb6fb9a044ff30a942)
 - [JavaScript深入系列15篇正式完结](https://juejin.im/post/59278e312f301e006c2e1510)
     + [JavaScirpt深入之从原型到原型链](https://github.com/mqyqingfeng/Blog/issues/2)
     + [JavaScript深入之词法作用域和动态作用域](https://github.com/mqyqingfeng/Blog/issues/3)
