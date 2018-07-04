@@ -239,14 +239,24 @@ git checkout branchName
 
 ### diff
 
-比较本地分支
+比较两个分支 **所有文件** 差异
 ```
 git diff localBranchA localBranchB
 ```
 
-比较本地文件与HEAD上的差异
+比较两个分支 **指定文件** 的差异
 ```
-git diff fileName
+git diff localBranchA localBranchB -- filePath
+```
+
+比较本地 **所有文件** 与HEAD上的差异
+```
+git diff
+```
+
+比较本地 **指定文件** 与HEAD上的差异
+```
+git diff filePath
 ```
 
 ### show
