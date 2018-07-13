@@ -241,17 +241,23 @@ git checkout branchName
 
 比较两个分支 **所有文件** 差异
 ```
-git diff localBranchA localBranchB
+git diff localBranchA localBranchB -- . // 打印差异
+git diff localBranchA localBranchB -- . >diff.txt // 打印差异到指定文件
+git diff --name-only localBranchA localBranchB -- . // 只打印差异文件名
 ```
 
 比较两个分支 **指定文件** 的差异
 ```
-git diff localBranchA localBranchB -- filePath
+git diff localBranchA localBranchB -- filePath // 指定文件
+git diff localBranchA localBranchB -- “**.js” // 正则指定若干文件
+
+git diff localBranchA localBranchB -- . ":(exclude)filePath" // 排除指定文件
+git diff localBranchA localBranchB -- . ":(exclude)**.js" // 正则排除指定文件
 ```
 
 比较本地 **所有文件** 与HEAD上的差异
 ```
-git diff
+git diff .
 ```
 
 比较本地 **指定文件** 与HEAD上的差异
