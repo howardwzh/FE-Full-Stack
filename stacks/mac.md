@@ -1,6 +1,6 @@
 > Mac配置和软件安装的备忘记录，以及工作的学习环境搭建等。
 > 常用下载网站：[xclient](http://xclient.info/?t=5d76255927ad01f925e02fd6e6f50c7e56d41b4f)
-
+> [MacOS Sierra 开发环境配置指南](https://segmentfault.com/a/1190000011473492)
 
 ### 常用软件
 1. 有道云笔记

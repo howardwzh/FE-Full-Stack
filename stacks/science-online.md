@@ -1,21 +1,21 @@
-# [Shadowsocks](https://portal.shadowsocks.la/)
+## [Shadowsocks](https://portal.shadowsocks.la/)
 
 **关键字：PAC、代理、翻墙、全局模式**
 > 轻量级科学上网姿势，改变您的生活体验！
 > 相信大家都有无法访问国外网站的经历，最近寻到一个翻墙好工具，与大家分享一下
 
 
-## Step 1: [订购链接](https://portal.shadowsocks.la/cart.php)
+### Step 1: [订购链接](https://portal.shadowsocks.la/cart.php)
 
 我选用的是普通版，主要考虑到暂时只在一个端使用，而且也相对便宜些，1年100多还能承受：）
 
 
-## Step 2: [下载客户端](https://portal.shadowsocks.la/downloads.php)
+### Step 2: [下载客户端](https://portal.shadowsocks.la/downloads.php)
 
 按照自己的系统情况，下载了：**Windows 客户端 .NET Framework 4.0 版**
 
 
-## Step 3: 添加服务器
+### Step 3: 添加服务器
 
 - 运行起来，先不要填服务器信息，直接关掉窗口
 - 进到网页上的自己的账户，点击进入购买的产品信息里，底部可使用的服务器列表
@@ -26,7 +26,7 @@
 经过上面的步骤，理论上已经可以访问 **谷歌** 了：）
 
 
-## Step 4: 优化浏览器配置
+### Step 4: 优化浏览器配置
 
 > Why: 因为只有某些网站才要代理去翻墙，比如：谷歌、Fackbook、youtobe等等，
 > 如果加了代理可能反而访问变慢了。
@@ -46,4 +46,16 @@
 
 PS：如果有在非浏览器下载“某些国外”站点场景时，要把 **启用系统代理** 勾上，并用选择 **系统代理模式 -> 全局模式**
 
+
+### Step 5: mac终端中设置代理翻墙（可选）
+1. 打开终端(默认你使用了zsh/oh my zsh)
+2. 执行 `vim ~/.zshrc`
+3. 在配置中加入下面的别名设置，保存退出(:wq)
+```
+alias proxy="export all_proxy=http://127.0.0.1:1087"
+alias unproxy="unset all_proxy"
+```
+4. 启用执行 `source ~/.zshrc`
+
+> 这里还有其它的配置方法，[马上去看](https://github.com/Quinton/blog/issues/2)
 
