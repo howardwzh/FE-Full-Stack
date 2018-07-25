@@ -36,7 +36,7 @@ function checkWebp (callback) {
 
 2. 根据是否支持webp来替换src的后缀
 ```js
-function setImageSrc (isSupportWebp) {
+function setImageByWebp (isSupportWebp) {
   var imgs = Array.from(document.querySelectorAll('img'))
   imgs.forEach (function(i) {
     var src = i.attributes['data-src'].value
@@ -45,6 +45,8 @@ function setImageSrc (isSupportWebp) {
     }
     i.src = src
   })
+  // 设置根dom的class=webps，以便css中进行区分
+  document.documentElement.className += " webps";
 }
 ```
 
@@ -52,3 +54,37 @@ function setImageSrc (isSupportWebp) {
 ```js
 checkWebp(setImageSrc)
 ```
+
+### 兼容css中的background-image
+> PS：还记得上面设置的根dom的class=webp吗？现在就有用了。
+
+- 如果用scss
+```css
+/*
+  通过这个函数来引入图片，例如：
+  #wrapper{ @include bg('../img/sample.jpg') }
+  这段代码经过编译后便会生成如下两句代码
+  #wrapper{ background-image:url('../img/sample.jpg'); }
+  .webp #wrapper{ background-image:url('../img/sample.jpg.webp'); }
+ */
+@mixin bg($url) {
+  background-image: url($url);
+  @at-root(with: all) .webps & {
+    background-image: url($url + '.webp');
+  }
+}
+```
+
+- 如果用less
+```css
+.mixin(@url) {
+  background-image: url(@url);
+  .webps & {
+    background-image: url('@{url}.webp');
+  }
+}
+```
+
+### 使用工具自动生成webp的图片
+- 使用webpack-loader
+- 开启node服务监听images里的普通图片，并自动生成对应的webp图片

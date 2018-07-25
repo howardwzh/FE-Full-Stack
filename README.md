@@ -9,6 +9,7 @@
     + [git](./stacks/git.md)
     + [yarn-npm-yeoman-bower](./stacks/yarn-npm-yeoman-bower.md)
     + [markdown](./stacks/markdown.md)
+    + [icon-font](./stacks/icon-font.md)
 - 基础知识
     + 浏览器
     + [http/https](./stacks/http-https.md)
@@ -23,7 +24,8 @@
     + [小程序](https://github.com/howardwzh/weixin)
     + angular
     + [angularX](https://github.com/howardwzh/star-angularX)
-    + [数据模拟](https://github.com/howardwzh/star-mock)
+    + [数据模拟](./stacks/mock-data/mock-data.md)
+    + [调试](./stacks/debug/debug.md)
 - 后端
     + node
     + [koa](https://github.com/howardwzh/star-koa)
