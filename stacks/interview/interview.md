@@ -1,9 +1,6 @@
 # 面试
 
 ## 参考文章
-
-- [关于前端面试](https://mdluo.github.io/blog/about-front-end-interview/)
-- [Angular面试从喜剧到悲剧的十个问题](https://segmentfault.com/a/1190000005817928)
 - [React 常用面试题目与分析](https://zhuanlan.zhihu.com/p/24856035#tipjar)
 - [写给前端面试者](https://github.com/amfe/article/issues/5)
 - [FEX 面试问题](https://github.com/fex-team/interview-questions)
