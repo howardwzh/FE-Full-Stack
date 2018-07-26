@@ -46,11 +46,12 @@ function checkWebp (callback = setImageByWebp) {
 2. 根据是否支持webp来替换src的后缀
 ```js
 function setImageByWebp (isSupportWebp) {
-  var imgs = Array.from(document.querySelectorAll('img'))
+  const imgs = Array.from(document.querySelectorAll('img'))
+  isSupportWebp = `${isSupportWebp}` === 'true'
   imgs.forEach (function(i) {
     if (!i.attributes['data-src']) return
-    var src = i.attributes['data-src'].value
-    if (`${isSupportWebp}` === 'true'){
+    const src = i.attributes['data-src'].value
+    if (isSupportWebp){
       src = src.replace(/\.jpg$/, '.webp')
     }
     i.src = src
@@ -58,22 +59,24 @@ function setImageByWebp (isSupportWebp) {
 }
 ```
 
-2. 根据是否支持webp，设置根html的class=webps，以便css中进行区分
+3. 根据是否支持webp，设置根html的class=webps，以便css中进行区分
 ```js
 function setHtmlClassByWebp (isSupportWebp) {
-  document.documentElement.className += " webps";
+  if (`${isSupportWebp}` === 'true') {
+    document.documentElement.className += " webps"
+  }
 }
 ```
 
-3. 进入不同页面（路由）执行
+4. 进入不同页面（路由）执行
 ```js
-checkWebp(setImageSrc)
+checkWebp(setImageByWebp)
 checkWebp(setHtmlClassByWebp)
 ```
 
 
 ### 兼容css中的background-image
-> PS：还记得上面设置的根dom的class=webp吗？现在就有用了。
+> PS：还记得上面`checkWebp(setHtmlClassByWebp)`吗？现在就有用了。
 
 - 如果用scss
 ```css
@@ -86,6 +89,8 @@ checkWebp(setHtmlClassByWebp)
  */
 @mixin bg($url) {
   background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: contain;
   @at-root(with: all) .webps & {
     background-image: url($url + '.webp');
   }
@@ -94,8 +99,10 @@ checkWebp(setHtmlClassByWebp)
 
 - 如果用less
 ```css
-.mixin(@url) {
+.mixinwebp(@url) {
   background-image: url(@url);
+  background-repeat: no-repeat;
+  background-size: contain;
   .webps & {
     background-image: url('@{url}.webp');
   }
