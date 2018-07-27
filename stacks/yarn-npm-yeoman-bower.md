@@ -1,19 +1,23 @@
-[Back](../README.md)
-#Npm & Bower & Yeoman
+
+> - [在5分钟内搭建企业内部私有npm仓库](https://github.com/jaywcjlove/handbook/blob/master/CentOS/%E5%9C%A85%E5%88%86%E9%92%9F%E5%86%85%E6%90%AD%E5%BB%BA%E4%BC%81%E4%B8%9A%E5%86%85%E9%83%A8%E7%A7%81%E6%9C%89npm%E4%BB%93%E5%BA%93.md)
+> - [Verdaccio · A lightweight private npm proxy registry](https://github.com/verdaccio/verdaccio)
 
 
 #目录
 
-1. [npm](#npm)
-2. [bower](#bower)
-3. [yeoman](#yeoman)
+- [yarn](#yarn)
+- [npm](#npm)
+- [bower](#bower)
+- [yeoman](#yeoman)
 
+### [yarn](https://yarnpkg.com/zh-Hans/)
+**安装yarn**
+```shell
+brew install yarn
+```
 
-#正文
-
-###npm
+### npm
 **安装npm**
-
 安装node.js就自带npm，如果想update npm可以
 ```
 npm install npm -g
@@ -44,7 +48,7 @@ npm i --save-dev <packageName>
 npm i -g <packageName>
 ```
 
-###bower
+### bower
 **安装bower**
 ```
 npm i -g bower 
@@ -73,7 +77,7 @@ bower i --save <packageName>
 bower update <packageName>
 ```
 
-###yeoman
+### yeoman
 **安装yo**
 ```
 npm i -g yo
