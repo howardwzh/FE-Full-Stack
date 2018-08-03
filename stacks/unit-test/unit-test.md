@@ -27,3 +27,16 @@
 1. 执行`yarn run debug`
 2. chrome地址栏输入`chrome://inspect/#devices`
 3. 点击对应的`Remote Target - inspect`
+
+#### 常见问题
+
+1. `SecurityError: localStorage is not available for opaque`
+```js
+// 在`package.json`中加入
+
+"jest": {
+  "verbose": true,
+  "testURL": "http://localhost/"
+}
+```
+  

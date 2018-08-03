@@ -116,3 +116,58 @@ shoeObj.listen('block',(size) => {
 shoeObj.trigger('red', 40)
 shoeObj.trigger('block', 42)
 ```
+
+### 中间件模式
+- 对象方式
+```js
+const middleware = {
+    init (num) {
+        this.result = num
+        return this
+    },
+    add (num) {
+        this.result += num
+        return this
+    },
+    sub (num) {
+        this.result -= num
+        return this
+    },
+    getResult () {
+        return this.result
+    }
+}
+
+const result = middleware.init(3).add(10).sub(2).getResult()
+```
+- 借用 express 与 koa的中间件思想
+```js
+// 初始化
+function Middleware () {
+    this.cache = []
+}
+
+// 通过数组缓存中间件
+Middleware.prototype.use = (fn) => {
+    if (typeof fn !== 'function') {
+        throw 'middleware must be a function'
+    }
+    // console.log(this.cache)
+    this.cache.push(fn)
+    return this
+}
+
+// next
+Middleware.prototype.next = () => {
+    if(this.middlewares && this.middlewares.length) {
+        const ware = this.middlewares.shift()
+        ware.call(this, this.next.bind(this))
+    }
+}
+
+// go
+Middleware.prototype.go = () => {
+    this.middlewares = this.cache.map(fn => fn)
+    this.next()
+}
+```
