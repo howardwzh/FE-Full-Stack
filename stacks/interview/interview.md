@@ -5,6 +5,7 @@
 - [写给前端面试者](https://github.com/amfe/article/issues/5)
 - [FEX 面试问题](https://github.com/fex-team/interview-questions)
 - [前端工作面试问题](https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Chinese)
+- [前端面试地图](./assets/InterviewMapMind.png.webp)
 
 ## 问题
 
