@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="./arouse.js"></script>
+</head>
+<body>
+  <button onclick="callApp()">唤起app</button>
+  <script>
+    var config = {
+      // 和app协定的scheme
+      schema: 'taobao://?page=home',
+      // iOS下的App在appstore的地址
+      appstore: '',
+      // 应用宝的地址
+      yyb: ''
+    }
+    var applink = new AppLink(config)
+
+    function callApp () {
+      applink.open()
+    }
+  </script>
+</body>
+</html>
