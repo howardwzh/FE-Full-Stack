@@ -16,6 +16,7 @@
     + html
     + css
     + [javascript](./stacks/javascript.md)
+    + [正则表达式](./stacks/regular-expression.md)
 - 前端
     + mvc/mvvm
     + [vue](https://github.com/howardwzh/star-vue)
