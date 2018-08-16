@@ -1,6 +1,7 @@
 > 调试
 
 ## 参考/资源
+- [移动端调试痛点？——送你五款前端开发利器](https://juejin.im/post/5b72e1f66fb9a009d018fb94)
 - [spy-debugger](https://github.com/wuchangming/spy-debugger)
 
 ## 目录

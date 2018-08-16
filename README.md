@@ -26,6 +26,9 @@
     + [angularX](https://github.com/howardwzh/star-angularX)
     + [数据模拟](./stacks/mock-data/mock-data.md)
     + [调试](./stacks/debug/debug.md)
+- 视觉系
+    + [数据可视化](https://github.com/howardwzh/star-data)
+    + [parallax](./stacks/parallax.md)
 - 后端
     + node
     + [koa](https://github.com/howardwzh/star-koa)
