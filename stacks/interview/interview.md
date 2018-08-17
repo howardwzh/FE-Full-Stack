@@ -6,6 +6,10 @@
 - [FEX 面试问题](https://github.com/fex-team/interview-questions)
 - [前端工作面试问题](https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Chinese)
 - [前端面试地图](./assets/InterviewMapMind.png.webp)
+- [技术面试需要掌握的基础知识整理](https://github.com/CyC2018/Interview-Notebook)
+- [准备 Google 的面试](https://github.com/jwasham/coding-interview-university/blob/a0188e00f237a42f06b7100875828b73b8117a25/translations/README-cn.md)
+- [前端面试手册](https://github.com/yangshun/front-end-interview-handbook/blob/94bb758c2969e5f72240090596bbb618494fac0e/Translations/Chinese/README.md)
+- [interactive-coding-challenges](https://github.com/donnemartin/interactive-coding-challenges)
 
 ## 问题
 
