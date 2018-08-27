@@ -48,6 +48,11 @@ npm i --save-dev <packageName>
 npm i -g <packageName>
 ```
 
+设置registry
+```
+npm config set --registry <registry url>
+```
+
 ### bower
 **安装bower**
 ```
