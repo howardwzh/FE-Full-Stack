@@ -50,7 +50,17 @@ npm i -g <packageName>
 
 设置registry
 ```
-npm config set --registry <registry url>
+npm config set registry <registry url>
+```
+
+删除registry
+```
+npm config delete registry
+```
+
+直接查看修改config
+```
+npm config edit
 ```
 
 ### bower
