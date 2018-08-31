@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/stacks/pwa-workbox/lab/src/assets/styles/b.css">
+</head>
+<body>
+  <img src="/stacks/pwa-workbox/lab/src/assets/images/c.png" alt="">
+  <script>
+    // Check that service workers are registered
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/stacks/pwa-workbox/lab/src/sw.js');
+      });
+    }
+  </script>
+  <script src="/stacks/pwa-workbox/lab/src/assets/scripts/a.js"></script>
+</body>
+</html>
