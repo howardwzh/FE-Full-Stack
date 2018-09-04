@@ -42,7 +42,7 @@ if (workbox) {
   //     runtime: 'custom-runtime-name' // 不设置的话默认值为 'runtime'
   // });
 
-  // workbox.setConfig({debug: true});
+  workbox.setConfig({debug: true});
 
   workbox.precaching.precacheAndRoute([
   {
@@ -59,7 +59,7 @@ if (workbox) {
   },
   {
     "url": "index.html",
-    "revision": "9d213f536ca770e92671888319aa8250"
+    "revision": "6f57f5957f259d37ca29dc8bbd628bda"
   }
 ]);
 } else {

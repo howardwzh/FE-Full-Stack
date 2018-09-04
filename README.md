@@ -3,9 +3,6 @@
 ## 目录
 
 - 工具
-    + photoshop
-    + sublime-text
-    + [nvm](./stacks/tools.md#nvm)
     + [git](./stacks/git.md)
     + [yarn-npm-yeoman-bower](./stacks/yarn-npm-yeoman-bower.md)
     + [markdown](./stacks/markdown.md)
@@ -31,7 +28,7 @@
     + [数据可视化](https://github.com/howardwzh/star-data)
     + [parallax](./stacks/parallax.md)
 - 后端
-    + node
+    + [node](./stacks/node.md)
     + [koa](https://github.com/howardwzh/star-koa)
     + [mongodb](./stacks/mongodb.md)
     + mysql
@@ -58,3 +55,5 @@
     + [mac环境搭建](./stacks/mac.md)
     + [科学上网](./stacks/science-online.md)
     + [方法论](./stacks/methodology.md)
+    + [架构](./stacks/architecture.md)
+    + [服务器](./stacks/server.md)
