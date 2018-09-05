@@ -25,7 +25,7 @@
     - [调出内建图形化界面](#%E8%B0%83%E5%87%BA%E5%86%85%E5%BB%BA%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2)
     - [配置显示log历史的格式，下方配置每条commit将一行显示](#%E9%85%8D%E7%BD%AE%E6%98%BE%E7%A4%BAlog%E5%8E%86%E5%8F%B2%E7%9A%84%E6%A0%BC%E5%BC%8F%E4%B8%8B%E6%96%B9%E9%85%8D%E7%BD%AE%E6%AF%8F%E6%9D%A1commit%E5%B0%86%E4%B8%80%E8%A1%8C%E6%98%BE%E7%A4%BA)
     - [免密pull/push](#%E5%85%8D%E5%AF%86pullpush)
-        - [https + credential helper](#https--credential-helper)
+        - [Mac设置credential.helper](#mac%E8%AE%BE%E7%BD%AEcredentialhelper)
         - [ssh](#ssh)
     - [查看所有配置项和文件位置](#%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE%E9%A1%B9%E5%92%8C%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE)
 - [常见问题](#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
@@ -484,20 +484,31 @@ git config format.pretty oneline
 git config --global format.pretty oneline
 ```
 
-#### 免密pull/push
-##### https + credential helper
+### 免密pull/push
+#### Mac设置credential.helper
+在Mac可以使用与钥匙链连接的认证助手，**第一次还是需要输入username/password的**
 ```
-git clone https://username:passward@github.com/howardwzh/FE-Full-Stack.git
+git config --global credential.helper osxkeychain
 ```
-[Caching your GitHub password in Git](https://help.github.com/articles/caching-your-github-password-in-git/)
-##### ssh
-[GIT免密登录（mac系统）](https://www.jianshu.com/p/159243702063)
+PS: Windows可以使用[git-credential-winstore](https://github.com/Microsoft/Git-Credential-Manager-for-Windows)
+#### 直接在config中设置https
+安全性差一些，**容易泄漏username/password**
+```
+...
+[remote "origin"]
+    url = https://username:password@github.com/howardwzh/FE-Full-Stack.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+...
+```
+#### SSH
+- [GIT免密登录（mac系统）](https://www.jianshu.com/p/159243702063)
+- [mac 下使用多个 git 账户配置](https://blog.csdn.net/Cuckoo_sound/article/details/79888207)
 
-#### 查看所有配置项和文件位置
+### 查看所有配置项和文件位置
 ```
 git config --list --show-origin
 ```
-### 常见问题
+## 常见问题
 
 ---
 ```shell
