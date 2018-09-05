@@ -504,6 +504,9 @@ PS: Windows可以使用[git-credential-winstore](https://github.com/Microsoft/Gi
 - [GIT免密登录（mac系统）](https://www.jianshu.com/p/159243702063)
 - [mac 下使用多个 git 账户配置](https://blog.csdn.net/Cuckoo_sound/article/details/79888207)
 
+- 如果你还没有克隆你的仓库，那你直接使用ssh协议用法：git@github.com:yourusername/yourrepositoryname克隆就行了
+- 如果已经使用https协议克隆了，那么按照如下方法更改协议： git remote set-url origin git@github.com:yourusername/yourrepositoryname.git
+
 ### 查看所有配置项和文件位置
 ```
 git config --list --show-origin
