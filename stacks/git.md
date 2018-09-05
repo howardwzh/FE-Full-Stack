@@ -22,6 +22,12 @@
 - [找回已删除的commit](#%E6%89%BE%E5%9B%9E%E5%B7%B2%E5%88%A0%E9%99%A4%E7%9A%84commit)
 - [设置代理](#%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86)
 - [小贴士](#%E5%B0%8F%E8%B4%B4%E5%A3%AB)
+    - [调出内建图形化界面](#%E8%B0%83%E5%87%BA%E5%86%85%E5%BB%BA%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2)
+    - [配置显示log历史的格式，下方配置每条commit将一行显示](#%E9%85%8D%E7%BD%AE%E6%98%BE%E7%A4%BAlog%E5%8E%86%E5%8F%B2%E7%9A%84%E6%A0%BC%E5%BC%8F%E4%B8%8B%E6%96%B9%E9%85%8D%E7%BD%AE%E6%AF%8F%E6%9D%A1commit%E5%B0%86%E4%B8%80%E8%A1%8C%E6%98%BE%E7%A4%BA)
+    - [免密pull/push](#%E5%85%8D%E5%AF%86pullpush)
+        - [https + credential helper](#https--credential-helper)
+        - [ssh](#ssh)
+    - [查看所有配置项和文件位置](#%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E9%85%8D%E7%BD%AE%E9%A1%B9%E5%92%8C%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE)
 - [常见问题](#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
 - [参考](#%E5%8F%82%E8%80%83)
 
@@ -464,12 +470,12 @@ ps: global 可换成 local，只设置当前的git仓库采用代理
 
 ### 小贴士
 
-调出内建图形化界面
+#### 调出内建图形化界面
 ```
 gitk
 ```
 
-配置显示log历史的格式，下方配置每条commit将一行显示
+#### 配置显示log历史的格式，下方配置每条commit将一行显示
 ```
 # 当前git仓库
 git config format.pretty oneline
@@ -478,6 +484,19 @@ git config format.pretty oneline
 git config --global format.pretty oneline
 ```
 
+#### 免密pull/push
+##### https + credential helper
+```
+git clone https://username:passward@github.com/howardwzh/FE-Full-Stack.git
+```
+[Caching your GitHub password in Git](https://help.github.com/articles/caching-your-github-password-in-git/)
+##### ssh
+[GIT免密登录（mac系统）](https://www.jianshu.com/p/159243702063)
+
+#### 查看所有配置项和文件位置
+```
+git config --list --show-origin
+```
 ### 常见问题
 
 ---
