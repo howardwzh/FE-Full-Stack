@@ -5,6 +5,132 @@
 - [Nginx 容器教程](http://www.ruanyifeng.com/blog/2018/02/nginx-docker.html)
 - [nginx配置location总结及rewrite规则写法](http://seanlook.com/2015/05/17/nginx-location-rewrite/)
 - [nginx服务器安装及配置文件详解](http://seanlook.com/2015/05/17/nginx-install-and-config/)
+- [初识 Nginx](https://lufficc.com/blog/nginx-for-beginners)
+
+## 安装
+```zsh
+# Mac
+brew update && brew install nginx
+
+# Linux
+# 如需添加yum源，执行下面方法
+# yum install epel-release –y
+# yum clean all
+# yum list
+yum install nginx
+```
+
+## 基本命令
+
+```zsh
+# 格式
+nginx -s <signal>
+
+# 快速关闭
+nginx -s stop
+
+# 优雅关闭: 待工作进程处理完再关闭
+nginx -s quit
+
+# 重新加载配置文件：先检查配置文件，正确时主线程开新工作线程，并关闭旧工作线程
+nginx -s reload
+
+# 重新打开日志文件
+nginx -s reopen
+```
+## 配置
+> 配置的核心：when url = ?, then do something
+
+### 简单指令: 
+```conf
+# 形如：指令名称 指令参数;
+listen  80;
+```
+
+### 块指令:
+```conf
+# 形如：
+# 指令名称 [条件参数] {
+#     指令名称 指令参数;
+#     指令名称 指令参数;
+# }
+http {
+    server {
+        location / {
+            root /data/www;
+        }
+    }
+}
+```
+
+## 代理服务器
+```conf
+server {
+    location /api/ {
+        # proxy_pass指令的参数为：协议+主机名+端口号
+        proxy_pass http://localhost:8080;
+    }
+
+    location /images/ {
+        root /data;
+    }
+}
+```
+
+## 配置临时跳转
+> 有时候我们觉得一开始配置的URL不好想换掉，但又不想原先的链接失效
+
+```conf
+location /oldblog/ {
+    # 当匹配到http://aotu.jd.com/oldblog/的时候会跳转到http://aotu.jd.com/newblog
+    return 302 http://aotu.jd.com/newblog
+}
+```
+## 配置限制访问
+> 服务器上的私有资源，Nginx配置一个限制访问
+```conf
+# 当匹配到/info的时候只允许10.7.101.224访问，其它的全部限制
+# 同时改写为/info.php
+location = /info {
+    allow 10.7.101.224;
+    deny all;
+    rewrite (.*) /info.php
+}
+```
+## default-ssl 配置解析
+> 通过Nginx配置HTTPS站点，在HTTP应用层给TCP/IP传输层的中间增加了TLS/SSL层
+```conf
+server {
+    # 默认情况下HTTPS监听443端口
+    listen  443 ssl;
+    server_name  localhost;
+    root  /var/www/;
+    # 下面这些都是配置SSL需要的
+    ssl on;
+    # 下面两个字段需要的crt利用openssl生成，具体可以看[这里](http://nginx.org/en/docs/http/configuring_https_servers.html)
+    ssl_certificate ssl/localhost.crt;
+    ssl_certificate_key ssl/localhost.key;
+    ssl_session_timeout 10m;
+    ssl_protocols SSLv2 SSLv3 TLSv1;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers on;
+    location = /info {
+        allow 127.0.0.1;
+        deny all;
+        rewrite (.*) /info.php;
+    }
+    location /phpmyadmin/ {
+        root /usr/local/share/phpmyadmin;
+        index index.php index.html index.htm;
+    }
+    location / {
+        include /usr/local/etc/nginx/conf.d/php-fpm;
+    }
+    error_page 403 /403.html;
+    error_page 404 /404.html;
+}
+```
+**PS: 若要在对外网使用，必须购买第三方信任证书才行**
 
 ## 配置不完全说明
 ### nginx.conf中

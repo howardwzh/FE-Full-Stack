@@ -64,7 +64,7 @@ docker images
 
 3. 运行容器
 ```zsh
-docker run -d --name nginx 06144b287844
+docker run -dit --name nginx 06144b287844
 
 # 查看所以运行的容器
 docker container ls
@@ -85,7 +85,7 @@ docker commit 06144b287844 nginx:v1
 
 6. 运行容器并将宿主机的8080端口映射到容器里去。
 ```zsh
-docker run -d -p 8080:80 nginx:v1
+docker run -dit -p 8080:80 nginx:v1
 ```
 
 **PS：如果需要vim没有的话，需要自己安装**
@@ -101,7 +101,7 @@ apt-get install vim
 
 8. 登录阿里镜像仓库
 ```zsh
-doczshker login --username=阿里云账户全名 registry-vpc.cn-hongkong.aliyuncs.com
+docker login --username=阿里云账户全名 registry-vpc.cn-hongkong.aliyuncs.com
 docker tag [ImageId] registry-vpc.cn-hongkong.aliyuncs.com/howardwzh/[镜像名]:[镜像zsh版本号]
 docker push registry-vpc.cn-hongkong.aliyuncs.com/howardwzh/[镜像名]:[镜像版本号]
 ```
