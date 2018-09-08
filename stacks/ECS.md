@@ -18,6 +18,9 @@ scp /Users/wangzhonghua/Documents/fileName root@xxx.xx.xxx.xx:/usr/local/src/
 
 # 传目录
 scp -r /Users/wangzhonghua/Documents/folderName root@xxx.xx.xxx.xx:/usr/local/src/
+
+# docker宿主机传容器
+docker cp /usr/local/src/dist containerID:/usr/local/src/
 ```
 
 #### 下载
@@ -30,6 +33,9 @@ scp -r root@xxx.xx.xxx.xx:/usr/local/src/folderName /Users/wangzhonghua/Document
 
 ## 把 xxx.xx.xxx.11 的文件拷贝到 xxx.xx.xxx.22 的/usr/local/src目录下
 scp root@xxx.xx.xxx.11:/usr/local/src/fileName root@xxx.xx.xxx.22:/usr/local/src/
+
+## docker容器传宿主机
+docker cp containerID:/usr/local/src/ /usr/local/src/dist 
 ```
 
 ## 安装Docker
