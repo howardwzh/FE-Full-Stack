@@ -43,3 +43,6 @@
 
 ### 常用命令
 1. 终端直接SSH远程连接Linux服务器 = `ssh username@IPaddress`
+
+### 其他
+- [Mac的Eclipse安装(简单到爆)](https://www.jianshu.com/p/5b6e8eb156ba)

@@ -2,19 +2,61 @@
 
 ## 参考/资源
 - [移动端调试痛点？——送你五款前端开发利器](https://juejin.im/post/5b72e1f66fb9a009d018fb94)
+- [whistle](http://wproxy.org/whistle/)
 - [spy-debugger](https://github.com/wuchangming/spy-debugger)
+- [零基础学习 Fiddler 抓包改包](https://juejin.im/entry/586b3f0a61ff4b006dd4f3e4)
 
-## 目录
-- 手机调试
-    - [spy-debugger](#spy-debugger)
+## whistle
+### 安装
+```zsh
+# 全局安装
+yarn global add whistle
 
-### spy-debugger (缺点：没有source可调试)
-#### 安装
+# 查看安装是否成功
+w2 help
+```
+
+### 使用
+```zsh
+# 启动
+w2 start
+
+# 重启
+w2 restart
+
+# 停止
+w2 stop
+
+# 调试模式启动
+w2 run
+```
+
+### 配置代理
+```conf
+# 手动配置wifi的代理
+Step 1: ip = 实际电脑ip
+Step 2: port = 8899
+```
+
+### 访问配置页面
+- [http://127.0.0.1:8899](http://127.0.0.1:8899)
+
+### 接口请求转发
+#### Step 1: 左侧导航，进入`Rules`
+#### Step 2: 根据需要增加规则
+```conf
+# 形如：匹配的地址   转向的新地址
+http://192.168.0.121:8080/xxx/yyy/zzz   http://192.168.11.105:8080
+http://192.168.0.121:8080/xxx   http://www.wzhtest.com/xxx/yyy
+```
+
+## spy-debugger
+### 安装
 ```
 npm install spy-debugger -g
 ```
 
-#### 三分钟上手
+### 三分钟上手
 1. 手机和PC保持在同一网络下（比如同时连到一个Wi-Fi下）
 2. 命令行输入`spy-debugger`，按命令行提示用浏览器打开相应地址。
 3. 设置手机的HTTP代理，代理IP地址设置为PC的IP地址，端口为spy-debugger的启动端口(默认端口：9888)。
@@ -25,7 +67,7 @@ npm install spy-debugger -g
 > PS: (手机首次调试需要安装证书，已安装了证书的手机无需重复安装)。问题：iOS 10.3.1以上版本证书安装问题
 5. 用手机浏览器访问你要调试的页面即可。
 
-#### 自定义选项
+### 自定义选项
 1. 端口 (默认端口：9888)
 ```
 spy-debugger -p 8888
@@ -53,3 +95,9 @@ spy-debugger -b false
 ```
 spy-debugger -c true
 ```
+
+## genymotion debug
+### chrome inspect
+- [打开inspect页面](chrome://inspect/#devices)
+- 找到要debug的页面，直接点击进入
+- **必须翻墙**，因为无法访问 https://chrome-devtools-frontend.appspot.com，只能出现空白页面

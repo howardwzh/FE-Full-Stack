@@ -118,4 +118,4 @@ docker push registry-vpc.cn-hongkong.aliyuncs.com/howardwzh/[镜像名]:[镜像�
 docker rmi –f [镜像名]
 ```
 
-## [安装Yapi](https://www.jianshu.com/p/a97d2efb23c5)
+## [安装Yapi](./mock-data/yapi.md)
