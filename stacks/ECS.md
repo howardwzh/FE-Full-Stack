@@ -118,4 +118,9 @@ docker push registry-vpc.cn-hongkong.aliyuncs.com/howardwzh/[镜像名]:[镜像�
 docker rmi –f [镜像名]
 ```
 
+10. 删除容器
+```zsh
+docker rm [容器名/容器ID]
+```
+
 ## [安装Yapi](./mock-data/yapi.md)

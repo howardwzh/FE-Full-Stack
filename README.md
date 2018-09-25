@@ -45,7 +45,8 @@
 - 项目构建/持续集成
     + [webpack-gulp](https://github.com/howardwzh/star-webpack-gulp)
     + [Travis-CI](https://github.com/ruanyf/jstraining/blob/master/demos/README.md#travis-ci)
-    + docker
+    + [docker](./stacks/docker.md)
+    + [jenkins](./stacks/jenkins.md)
 - 网络安全
     + [常见攻击](./stacks/security.md)
 - 其它

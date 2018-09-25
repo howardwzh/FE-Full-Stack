@@ -255,10 +255,10 @@ git diff --name-only localBranchA localBranchB -- . // 只打印差异文件名
 比较两个分支 **指定文件** 的差异
 ```
 git diff localBranchA localBranchB -- filePath // 指定文件
-git diff localBranchA localBranchB -- “**.js” // 正则指定若干文件
+git diff localBranchA localBranchB -- '**.js' // 正则指定若干文件
 
-git diff localBranchA localBranchB -- . ":(exclude)filePath" // 排除指定文件
-git diff localBranchA localBranchB -- . ":(exclude)**.js" // 正则排除指定文件
+git diff localBranchA localBranchB -- . ':(exclude)filePath' // 排除指定文件
+git diff localBranchA localBranchB -- . ':(exclude)**.js' // 正则排除指定文件
 ```
 
 比较本地 **所有文件** 与HEAD上的差异
@@ -506,6 +506,11 @@ PS: Windows可以使用[git-credential-winstore](https://github.com/Microsoft/Gi
 
 - 如果你还没有克隆你的仓库，那你直接使用ssh协议用法：git@github.com:yourusername/yourrepositoryname克隆就行了
 - 如果已经使用https协议克隆了，那么按照如下方法更改协议： git remote set-url origin git@github.com:yourusername/yourrepositoryname.git
+
+##### 执行ssh-add时出现Could not open a connection to your authentication agent
+```zsh
+ssh-agent bash
+```
 
 ### 查看所有配置项和文件位置
 ```
