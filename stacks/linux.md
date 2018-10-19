@@ -160,3 +160,10 @@ passwd USERNAME
 # root用户 删除某个用户的密码
 passwd -d USERNAME
 ```
+
+## 常用功能
+### ping
+```zsh
+apt-get update
+apt-get install inetutils-ping
+```
