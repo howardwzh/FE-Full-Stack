@@ -25,3 +25,11 @@ docker volume rm my-vol
 docker volume prune
 ```
 
+```zsh
+# 显示单个容器ip
+docker inspect --format '{{ .NetworkSettings.IPAddress }}' <container-ID> 
+
+# 显示所有容器ip
+docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+```
+
