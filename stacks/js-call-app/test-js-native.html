@@ -10,7 +10,7 @@
 </head><body>
     <h1>WebViewJavascriptBridge Demo</h1>
     <div id='buttons'><button id="btn">test</button></div> <div id='log'></div>
-    <script src="./jkJsbridge.js"></script>
+    <script src="./hJssdk.js"></script>
 	<script>
     var uniqueId = 1
     function log(message, data) {
@@ -26,15 +26,13 @@
     callbackButton.innerHTML = 'Fire testObjcCallback'
     callbackButton.onclick = function(e) {
         e.preventDefault()
-        jkjsbridge.callNativeEvent('testObjcCallback', {'foo': 'bar'}, function(response) {
+        hJssdk.callNativeEvent('jsGetUserInfo', null, function(response) {
             log('JS got response', response)
         })
     }
     setTimeout(function(){
-        jkjsbridge.registerEvent4Native('testJavascriptHandler', function(data, responseCallback) {
+        hJssdk.registerEvent4Native('nativeSendUserInfo', function(data, responseCallback) {
             log('ObjC called testJavascriptHandler with', data)
-            var responseData = { 'Javascript Says':'Right back atcha!' }
-            log('JS responding with', responseData)
             responseCallback(responseData)
         })
     }, 1000)
