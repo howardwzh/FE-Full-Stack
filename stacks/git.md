@@ -242,7 +242,10 @@ git checkout branchName
 ```
 删除分支，**注意：**不能删除本身所在分支，此时需要先切换到其它分支才能删除
 
-
+恢复指定文件（从特定的commit）
+```
+git checkout c5f567 -- file1/to/restore file2/to/restore
+```
 ### diff
 
 比较两个分支 **所有文件** 差异
