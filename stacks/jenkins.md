@@ -1,16 +1,14 @@
 ## 参考资料
-- [Docker 教程](http://www.runoob.com/docker/docker-tutorial.html)
 - [Docker系列之Jenkins自动化部署](https://juejin.im/entry/5958f544f265da6c317d9c8f)
 - [实战笔记：Jenkins打造强大的前端自动化工作流](https://juejin.im/post/5ad1980e6fb9a028c42ea1be)
 - [macOS Jenkins安装&配置](https://www.jianshu.com/p/9dc3b45fbbec)
-
 
 ## 安装/启动
 1. [下载javaSDK(jdk)](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，双击安装即可
 2. [下载jenkins.war](https://jenkins.io/download/)
 3. 执行下面命令
 ```
-java -jar jenkins.war –-httpPort=8888
+java -jar jenkins.war –-httpPort=8866
 ```
 ## 插件安装
 > 路径：`系统管理`-`插件管理`-`可用插件`-`搜索`
@@ -23,7 +21,7 @@ java -jar jenkins.war –-httpPort=8888
 ## 搭建前端自动化工程（jenkins）
 
 ### step1-选择Shared Workspace（推荐，共享以减少重复冗余）
-1. 直接选择配置好的对应工作区
+1. 直接选择配置好的对应[分享工作区](#配置Shared_Workspace)
 
 ### step2-配置git项目地址
 1. 项目地址，如：`https://github.com/howardwzh/my-project.git`
