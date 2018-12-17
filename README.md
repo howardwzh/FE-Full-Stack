@@ -7,6 +7,8 @@
     + [yarn-npm-yeoman-bower](./stacks/yarn-npm-yeoman-bower.md)
     + [markdown](./stacks/markdown.md)
     + [icon-font](./stacks/icon-font.md)
+    + [pdf转html](./stacks/pdf.md)
+    + [storybook](./stacks/storybook)
 - 基础知识
     + 浏览器
     + [http/https](./stacks/http-https.md)
@@ -38,6 +40,7 @@
     + esdoc
     + wiki
     + [unit-test](./stacks/unit-test/unit-test.md)
+    + [设计和前端合作模式](./stacks/design-export-html/design-export-html.md)
     + e2e
 - 数据分析
     + 用户数据
@@ -47,6 +50,7 @@
     + [Travis-CI](https://github.com/ruanyf/jstraining/blob/master/demos/README.md#travis-ci)
     + [docker](./stacks/docker.md)
     + [jenkins](./stacks/jenkins.md)
+    + [git-hooks](./stacks/git-hooks.md)
 - 网络安全
     + [常见攻击](./stacks/security.md)
 - 其它

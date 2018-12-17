@@ -542,6 +542,70 @@ git config –list
 ```
 ---
 
+## 命名规则
+```zsh
+# 新分支: 需求ID后3位/开发者拼音首字或英文名
+feat-xxxx/howard
+
+# hotfix，线上问题紧急修复
+hotfix-yyyy/howard
+```
+
+## 提交描述
+```zsh
+# 新功能
+feat: 增加逻辑判断
+
+# bugfix
+fix: 修复逻辑判断的缺陷
+
+# hotfix
+hotfix: 修复线上逻辑判断的缺陷
+
+# 文档修改
+docs: 修改逻辑判断的文档
+
+# 配置调整
+chore: 发布配置调整为增加hash命名
+
+# 重构
+refactor: 重构逻辑判断功能
+```
+
+## 工作流
+```zsh
+######## 新建分支，并从`最新tag`拉最新代码
+git checkout -b xxxx/howard v1.0.0.2018093001
+
+######## 开发时，提交代码到各自的远程分支
+git push origin / git push origin xxxx/howard
+
+######## 开发结束，需要提测时
+# 切换待测试分支 develop
+git checkout develop
+# 合并到最新的develop代码
+git merge xxxx/howard
+# 推送到develop分支
+git push origin / git push origin develop
+
+######## 测试完成
+# 切换到测试完成到开发分支
+git checkout xxxx/howard
+# 合并最新release代码
+git merge release
+# 提merge request申请，合并到预发布 release
+from xxxx/howard
+to release
+
+######## 发布上线后打tag
+# 切换到release
+git checkout release
+# 打tag，格式：[版本].[年月日].[当日打tag次数]
+git tag v1.0.0.2018091501 HEAD
+# 推送到远端
+git push origin v1.0.0.2018091501
+```
+
 
 ### 参考
 - [猴子都能懂的GIT](https://backlog.com/git-tutorial/cn/stepup/stepup1_1.html)
