@@ -8,7 +8,8 @@
     + [markdown](./stacks/markdown.md)
     + [icon-font](./stacks/icon-font.md)
     + [pdf转html](./stacks/pdf.md)
-    + [storybook](./stacks/storybook)
+    + [storybook](./stacks/storybook.md)
+    + [verdaccio: 搭建私有仓库](./stacks/verdaccio.md)
 - 基础知识
     + 浏览器
     + [http/https](./stacks/http-https.md)
