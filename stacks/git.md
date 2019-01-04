@@ -174,6 +174,11 @@ or
 git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 ```
 
+在本地清理不存在的远程分支
+```
+git remote prune origin
+```
+
 ### push
 
 当本地分支与远程分支 **名称一样** 时，可以直接`push`

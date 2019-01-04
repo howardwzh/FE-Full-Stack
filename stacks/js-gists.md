@@ -248,3 +248,136 @@ getExcel().then(res => {
   window.URL.revokeObjectURL(href); //释放掉blob对象 
 })
 ```
+
+#### 图片压缩
+```js
+/**
+ * 图片压缩
+ * @param {File} file
+ * @param {Function} success
+ * @param {Function} error
+ */
+const QUALITY = 0.92 // 压缩质量
+const MIN_LENGTH = 1200 // 缩放最小边的长度
+const compressImage = (file, success, error) => {
+  // 图片小于1M不压缩
+  if (file.size < Math.pow(1024, 2)) {
+    return success(file);
+  }
+
+  const name = file.name; //文件名
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = e => {
+    const src = e.target.result;
+
+    let img = new Image();
+    img.src = src;
+    img.onload = () => {
+      const w = img.width;
+      const h = img.height;
+      const whRatio = w / h;
+      let newW
+      let newH
+      if (w < h) {
+        newW = Math.min(MIN_LENGTH, w)
+        newH = newW/whRatio
+      } else {
+        newH = Math.min(MIN_LENGTH, h)
+        newW = newH*whRatio
+      }
+      //生成canvas
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = newW;
+      canvas.height = newH;
+      // 根据orientation进行旋转
+      getOrientation(file, function(orientation) {
+        if (orientation === 6) {
+          // 旋转90°
+          canvas.width = newH;
+          canvas.height = newW;
+          ctx.rotate(Math.PI / 2);
+          ctx.translate(0, -newH);
+        } else if (orientation === 3) {
+          // 旋转180°
+          ctx.rotate(Math.PI);
+          ctx.translate(-newW, -newH);
+        }
+        //铺底色 PNG转JPEG时透明区域会变黑色
+        ctx.fillStyle = "#fff";
+        ctx.fillRect(0, 0, newW, newH);
+
+        ctx.drawImage(img, 0, 0, newW, newH);
+        // quality值越小，所绘制出的图像越模糊
+        const base64 = canvas.toDataURL("image/jpeg", QUALITY); //图片格式jpeg或webp可以选0-1质量区间
+
+        // 返回base64转blob的值
+        console.log(
+          `原图${(src.length / 1024).toFixed(2)}kb`,
+          `新图${(base64.length / 1024).toFixed(2)}kb`
+        );
+        //去掉url的头，并转换为byte
+        const bytes = window.atob(base64.split(",")[1]);
+        //处理异常,将ascii码小于0的转换为大于0
+        const ab = new ArrayBuffer(bytes.length);
+        const ia = new Uint8Array(ab);
+        for (let i = 0; i < bytes.length; i++) {
+          ia[i] = bytes.charCodeAt(i);
+        }
+        file = new Blob([ab], { type: "image/jpeg" });
+        file = new window.File([file], name, { type: file.type });
+        success(file);
+      });
+    };
+    img.onerror = e => {
+      error(e);
+    };
+  };
+  reader.onerror = e => {
+    error(e);
+  };
+};
+
+/**
+ * 获取原始图片Orientation值
+ * @param {File} file
+ * @param {Function} callback
+ */
+function getOrientation(file, callback) {
+  var reader = new FileReader();
+  reader.readAsArrayBuffer(file.slice(0, 64 * 1024));
+  reader.onload = function(event) {
+    var view = new DataView(event.target.result);
+
+    if (view.getUint16(0, false) != 0xffd8) return callback(-2);
+
+    var length = view.byteLength,
+      offset = 2;
+
+    while (offset < length) {
+      var marker = view.getUint16(offset, false);
+      offset += 2;
+
+      if (marker == 0xffe1) {
+        if (view.getUint32((offset += 2), false) != 0x45786966) {
+          return callback(-1);
+        }
+        var little = view.getUint16((offset += 6), false) == 0x4949;
+        offset += view.getUint32(offset + 4, little);
+        var tags = view.getUint16(offset, little);
+        offset += 2;
+
+        for (var i = 0; i < tags; i++)
+          if (view.getUint16(offset + i * 12, little) == 0x0112)
+            return callback(view.getUint16(offset + i * 12 + 8, little));
+      } else if ((marker & 0xff00) != 0xff00) break;
+      else offset += view.getUint16(offset, false);
+    }
+    return callback(-1);
+  };
+}
+
+export default compressImage;
+
+```
