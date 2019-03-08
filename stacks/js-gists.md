@@ -381,3 +381,29 @@ function getOrientation(file, callback) {
 export default compressImage;
 
 ```
+
+#### 表单提交
+```js
+/**
+ * 表单提交
+ * @param {Object} param
+ * @param {String} param.method
+ * @param {String} param.action
+ * @param {Object} param.data
+ */
+export function formSubmit({method = 'POST', action, data = {}}) {
+  const form = document.createElement('form')
+  form.method = method
+  form.action = action
+
+  for (const name in data) {
+    const element = document.createElement('input')
+    element.name = name
+    element.value = data[name]
+    form.appendChild(element)
+  }
+
+  document.body.appendChild(form)
+  form.submit()
+}
+```
