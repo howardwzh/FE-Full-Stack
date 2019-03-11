@@ -210,7 +210,7 @@
    * @returns 格式化后的日期，形如：'2018-05-02 星期三 08:09:04.396' | '2018-5-2 周三 8:9:4.396'
    */
   function formatDate (dateObject, fmt) {
-    const o = {
+    var o = {
       'M+': dateObject.getMonth() + 1, // 月份 
       'd+': dateObject.getDate(), // 日 
       'h+': dateObject.getHours(), // 小时 
@@ -219,7 +219,7 @@
       'q+': Math.floor((dateObject.getMonth() + 3) / 3), // 季度
       S: dateObject.getMilliseconds() // 毫秒 
     }
-    const week = {
+    var week = {
       0: '日',
       1: '一',
       2: '二',
@@ -228,24 +228,25 @@
       5: '五',
       6: '六'
     }
-    let date = fmt
+    var date = fmt
     if (/(y+)/.test(date)) {
-      date = date.replace(RegExp.$1, (`${dateObject.getFullYear()}`).substr(4 - RegExp.$1.length))
+      date = date.replace(RegExp.$1, (''+dateObject.getFullYear()).substr(4 - RegExp.$1.length))
     }
     if (/(E+)/.test(date)) {
-      let weekPrefix = ''
+      var weekPrefix = ''
       if (RegExp.$1.length > 2) {
         weekPrefix = '星期'
       } else if (RegExp.$1.length > 1) {
         weekPrefix = '周'
       }
-      date = date.replace(RegExp.$1, weekPrefix + week[`${dateObject.getDay()}`])
-    } 
-    Object.entries(o).forEach(([key, value]) => {
-      if (new RegExp(`(${key})`).test(date)) {
-        date = date.replace(RegExp.$1, (RegExp.$1.length === 1) ? (value) : ((`00${value}`).substr((`${value}`).length)))
+      date = date.replace(RegExp.$1, weekPrefix + week[''+dateObject.getDay()])
+    }
+    for (var key in o) {
+      var value = o[key]
+      if (new RegExp(''+key).test(date)) {
+        date = date.replace(RegExp.$1, (RegExp.$1.length === 1) ? (value) : (('00'+value).substr((''+value).length)))
       }
-    })
+    }
     return date
   }
 })(window)
