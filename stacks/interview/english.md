@@ -21,7 +21,7 @@
 
 ## Overview
 
-Help bussiness develop high-quality websites and applications, keep up with changes in demand, and fully communicate needs to prevent misunderstandings. Work with your heart, walk with you, and hope to help you in your career.
+Help bussiness develop high-quality websites and applications, keep up with changes in demand, and fully communicate needs to prevent misunderstandings. I hope to help you in your career.
 
 What can I do for you?
 1. Skilled in using Bootstrap to develop adaptive websites, and use jQuery/Css3 to write rich interactive effects (✭✭✭✭✭)
