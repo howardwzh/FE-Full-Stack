@@ -2,6 +2,7 @@
 - [常用扩展](#常用扩展)
 - [可选扩展](#可选扩展)
 - [自已开发扩展](./extensions/checklist-vscode/README.md)
+- [动图演示23个鲜为人知的VSCode快捷键](https://juejin.im/post/5e2024485188254df874102b)
 
 ### 常用扩展
 - Vetur = 对vue文件的支持的扩展
@@ -16,10 +17,7 @@
 - wepy snippets = wepy weui 框架代码片段
 - wxapi snippets = 微信小程序api代码片段
 
-
 ### 可选扩展
 - Easy LESS = 保存自动生成css文件，可针对当前工作区设置，避免不使用该功能时生成多余css
 - Partial Diff = 强大的对比工具，根据需要下载安装
 - file-size = 在右下角显示当前打开文件大小
-
-
