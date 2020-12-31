@@ -215,3 +215,34 @@ server {
     }
 }
 ```
+
+# 技巧
+- [清缓存](https://www.jb51.net/article/173619.htm)
+```zsh
+server{
+　　listen 80; #监听端口
+　　server_name example.com
+ 
+　　# 后台api
+　　location ~ ^/api {
+　　　　proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+　　　　include uwsgi_params;
+　　　 uwsgi_pass example-be;
+　 }
+ 
+　　# 前端静态文件
+　　location ~* \.(gif|jpg|jpeg|png|css|js|ico|eot|otf|fon|font|ttf|ttc|woff|woff2)$ {
+　　　　root /var/www/example-fe/dist/;
+　　}
+ 
+　　# 前端html文件
+　　location / {
+　　　　# disable cache html ****清缓存****
+　　　　add_header Cache-Control 'no-cache, must-revalidate, proxy-revalidate, max-age=0';
+ 
+　　　　root /var/www/example-fe/dist/;
+　　　　index index.html index.htm;
+　　　　try_files $uri /index.html;
+　　}
+}
+```

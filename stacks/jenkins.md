@@ -82,3 +82,20 @@ ssh-keygen -t rsa -C "howard@mac.com" # 一直enter下去，也可以在 Enter p
   - Username（登录用户名）
   - Remote Directory（默认初始目录，方便后续相对路径配置即可）
   - Test Configuration（测试是否连通，显示 **Success** 就通了）
+
+### 常见问题
+#### npm命令报错 npm: command not found
+> 前提：服务器npm已经配置完成，并且服务器执行npm install没有问题
+
+1. 查询系统环境变量： `echo $PATH`
+```zsh
+[root@localhost /]# echo $PATH
+/home/software/jdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/usr/local/git/bin:/usr/local/git/bin:/root/bin
+```
+2. 服务器的环境变量添加到Jenkins
+位置：`【系统管理】->【系统设置】->【全局属性】->【环境变量】`
+做如下配置：
+```zsh
+键: PATH
+值: /home/software/jdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/usr/local/git/bin:/usr/local/git/bin:/root/bin
+```
