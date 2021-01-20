@@ -1,3 +1,7 @@
+## 参考/资源
+- [如何解决类似 curl: (7) Failed to connect to raw.githubusercontent.com port 443: Connection refused 的问题](https://github.com/hawtim/blog/issues/10)
+- [免费Shadowsocks/SS帐号分享网站推荐](https://baiyunju.cc/4951)
+- [update Homebrew 太慢，更换Homebrew的更新源](https://juejin.cn/post/6844904084776960008)
 ## [Shadowsocks](https://portal.shadowsocks.la/)
 
 **关键字：PAC、代理、翻墙、全局模式**
@@ -59,3 +63,75 @@ alias unproxy="unset all_proxy"
 
 > 这里还有其它的配置方法，[马上去看](https://github.com/Quinton/blog/issues/2)
 
+
+## update Homebrew 太慢，更换Homebrew的更新源
+### 替换更新源
+```zsh
+# 替换brew.git:
+$ cd "$(brew --repo)"
+# 中国科大:
+$ git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
+# 清华大学:
+$ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
+
+# 替换homebrew-core.git:
+$ cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+# 中国科大:
+$ git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
+# 清华大学:
+$ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
+
+# 替换homebrew-bottles:
+# 中国科大:
+$ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.bash_profile
+$ source ~/.bash_profile
+# 清华大学:
+$ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles' >> ~/.bash_profile
+$ source ~/.bash_profile
+
+# 应用生效:
+$ brew update
+```
+### 如果你之前折腾过不少导致你的Homebrew有点问题，那么可以尝试使用如下方案：
+```zsh
+# 诊断Homebrew的问题:
+$ brew doctor
+
+# 重置brew.git设置:
+$ cd "$(brew --repo)"
+$ git fetch
+$ git reset --hard origin/master
+
+# homebrew-core.git同理:
+$ cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+$ git fetch
+$ git reset --hard origin/master
+
+# 应用生效:
+$ brew update
+```
+
+### 重置更新源 某些时候也有换回官方源的需求
+```zsh
+# 重置brew.git:
+$ cd "$(brew --repo)"
+$ git remote set-url origin https://github.com/Homebrew/brew.git
+
+# 重置homebrew-core.git:
+$ cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+$ git remote set-url origin https://github.com/Homebrew/homebrew-core.git
+```
+
+### 后记
+完成更新源的更换后，我们可以使用 brew upgrade将现有的软件进行更新至最新版本，这样便能很直接的看出速度上的变化了。最后不要忘记 brew cleanup将旧有的软件安装包进行清理
+
+## 解决 raw.githubusercontent.com port 443 一类问题
+1. 打开 https://www.ipaddress.com/ 输入访问不了的域名, 查询之后可以获得 **正确的 IP 地址**
+2. 在本机的 host 文件中添加，建议使用 **switchhosts** 方便 host 管理
+```host
+199.232.68.133 raw.githubusercontent.com
+199.232.68.133 user-images.githubusercontent.com
+199.232.68.133 avatars2.githubusercontent.com
+199.232.68.133 avatars1.githubusercontent.com
+```
+如上配置, 添加以上几条 host 配置，页面的图片展示就正常了，homebrew 也能装了，nvm 也行动灵活了

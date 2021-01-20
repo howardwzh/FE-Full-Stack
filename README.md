@@ -21,6 +21,7 @@
     + mvc/mvvm
     + [vue](https://github.com/howardwzh/star-vue)
     + [react](https://github.com/howardwzh/star-react)
+    + [flutter](./stacks/flutter.md)
     + [react-native](https://github.com/howardwzh/star-react-native)
     + [小程序](https://github.com/howardwzh/weixin)
     + angular
